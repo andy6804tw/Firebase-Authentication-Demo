@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/index.css" />
+</head>
+
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Firebase Web login</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+    <a id="forget" href="./forget.html">忘記你的帳戶或密碼</a>
+    <button onclick="login()">Login to Account</button>
+    <div class="division-line">
+      <hr id="left-line">
+      <span>OR</span>
+      <hr id="right-line">
+    </div>
+    <div class="other-login">
+      <div id="img">
+        <img src="https://firebasestorage.googleapis.com/v0/b/webfirebase-88e1c.appspot.com/o/%E7%99%BB%E5%85%A5%E9%80%A3%E5%8B%95icon-01.png?alt=media&token=016687b8-3366-429d-93a6-216078678c5b"
+          alt="other_login" onclick="fb_login()">
+      </div>
+      <div id="img">
+        <img src="https://firebasestorage.googleapis.com/v0/b/webfirebase-88e1c.appspot.com/o/%E7%99%BB%E5%85%A5%E9%80%A3%E5%8B%95icon-02%20(1).png?alt=media&token=fe6f1ca2-0d57-488f-8c93-4670951c9c01"
+          alt="other_login" onclick="google_login()">
+      </div>
+      <div id="img">
+        <img src="https://firebasestorage.googleapis.com/v0/b/fir-demo-2a2b1.appspot.com/o/phone.png?alt=media&token=b71a2502-7a22-4eb8-b3a7-6658484b23f2"
+          alt="other_login" onclick="phone_login()">
+      </div>
+    </div>
+    <a href="./register.html" id="create-account">尚未註冊？立即建立您的帳戶</a>
+  </div>
+
+  <div id="recaptcha-container"></div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script src="/public/js/firebase.js"></script>
+  <script src="/public/js/index.js"></script>
+
+</body>
+
+</html>

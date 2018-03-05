@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>忘記密碼</title>
+  <link rel="stylesheet" href="./css/forget.css">
+</head>
+
+<body>
+  <div id="send_div" class="main-div">
+    <h3>請輸入您註冊的 Email</h3>
+    <span>我們將會寄一封修改密碼信件給您，屆時請至您的信箱內收取。</span>
+    <input type="email" placeholder="Email..." id="email_field" />
+
+    <button onclick="forget()">送出</button>
+  </div>
+
+  <div id="message_div" class="send-div">
+    <h3>信件已送出！</h3>
+    <p id="send_para">請至您的信箱收取修改密碼信件，並完成修改密碼動作。</p>
+    <button onclick="history.back()">返回登入頁面</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script src="/public/js/firebase.js"></script>
+  <script src="/public/js/forget.js"></script>
+</body>
+
+</html>
