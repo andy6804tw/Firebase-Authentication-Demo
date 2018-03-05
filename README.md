@@ -1,3 +1,6 @@
+[![GitHub license][license-image]][license-url]
+[![build][build-image]][build-url]
+
 # Firebase Authentication
 
 Demo Link: 
@@ -59,3 +62,11 @@ Authorization: eyJhbGciOiJSUzI1NiIsImtpZCI6ImY4ZWFhOWYzODFiNTFiYzc4MmJjOTExMTljN
 ![img](./screenshot/img04.png)
 
 ![img](./screenshot/img05.png)
+
+## LICENSE
+#### MIT
+
+[license-image]: https://img.shields.io/npm/l/express.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com
+[license-url]: https://github.com/andy6804tw/imgur-module/blob/master/LICENSE
+[build-image]:https://img.shields.io/badge/build-demo-brightgreen.svg
+[build-url]:https://andy6804tw.github.io/Firebase-Authentication-Demo/public/index.html
