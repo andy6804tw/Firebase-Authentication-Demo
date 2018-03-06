@@ -36,6 +36,7 @@ firebase.auth().signInWithPhoneNumber("+886984003918", window.recaptchaVerifier)
     console.log(err);
   });
 var myFunction = function () {
+  console.log(document.getElementById("verificationcode").value);
   // window.confirmationResult.confirm(document.getElementById("verificationcode").value)
   //   .then(function (result) {
   //     alert('login process successfull!\n redirecting');
@@ -45,6 +46,7 @@ var myFunction = function () {
   //     alert(error);
   //   });
   const code = document.getElementById("verificationcode").value;
+  console.log(window.confirmationResult.verificationId+' '+code)
   var credential = firebase.auth.PhoneAuthProvider.credential(window.confirmationResult.verificationId, code);
   firebase.auth().signInWithCredential(credential);
 };
