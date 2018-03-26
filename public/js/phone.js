@@ -25,16 +25,24 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 });
 
-window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-firebase.auth().signInWithPhoneNumber("+886984003918", window.recaptchaVerifier)
-  .then(function (confirmationResult) {
-    window.confirmationResult = confirmationResult;
-    // 簡訊傳送成功隱藏
-    document.getElementById("form").style.display = "block";
-    document.getElementById("recaptcha-container").style.display = "none";
-  }).catch((err) => {
-    console.log(err);
-  });
+//window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+  'size': 'invisible',
+  'callback': function (response) {
+    // reCAPTCHA solved, allow signInWithPhoneNumber.
+    onSignInSubmit();
+  }
+});
+function onSignInSubmit(){
+  firebase.auth().signInWithPhoneNumber(document.getElementById("phone_field").value, window.recaptchaVerifier)
+    .then(function (confirmationResult) {
+      window.confirmationResult = confirmationResult;
+      // 簡訊傳送成功隱藏
+      document.getElementById("phone_div").style.display = "none";
+      document.getElementById("verification_div").style.display = "block";
+    });
+}
+
 var myFunction = function () {
   console.log(document.getElementById("verificationcode").value);
   // window.confirmationResult.confirm(document.getElementById("verificationcode").value)
@@ -46,7 +54,7 @@ var myFunction = function () {
   //     alert(error);
   //   });
   const code = document.getElementById("verificationcode").value;
-  console.log(window.confirmationResult.verificationId+' '+code)
+  //console.log(window.confirmationResult.verificationId+' '+code)
   var credential = firebase.auth.PhoneAuthProvider.credential(window.confirmationResult.verificationId, code);
   firebase.auth().signInWithCredential(credential);
 };

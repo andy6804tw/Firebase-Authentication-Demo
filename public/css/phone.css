@@ -58,6 +58,6 @@ input, button {
 }
 
 /* 驗證 */
-/* form{
+.verification-div{
   display: none;
-} */
+}

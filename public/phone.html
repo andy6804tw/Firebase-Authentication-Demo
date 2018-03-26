@@ -11,9 +11,16 @@
 <body>
   <!-- 輸入電話 -->
   <div id="login_div" class="main-div">
-    <input type="text" id="verificationcode" value="enter verification">
-    <button onclick="myFunction()">Submit</button>
-    <div id="recaptcha-container"></div>
+    <div id="phone_div" class="phone-div">
+      請輸入您的手機號碼
+      <input type="text" id="phone_field" value="phone">
+      <button id="sign-in-button" onclick="onSignInSubmit()">Submit</button>
+    </div>
+    <div id="verification_div" class="verification-div">
+      <input type="text" id="verificationcode" value="token">
+      <button onclick="myFunction()">Submit</button>
+    </div>
+    <!-- <div id="recaptcha-container"></div> -->
   </div>
   <!-- 登入 -->
   <div id="user_div" class="loggedin-div">
